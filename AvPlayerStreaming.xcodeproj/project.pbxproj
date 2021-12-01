@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		2B8A741B2753A0C5004A6BD9 /* TbInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8A741A2753A0C5004A6BD9 /* TbInfoCell.swift */; };
 		2B8A74232753A327004A6BD9 /* SubTitles-Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8A74222753A327004A6BD9 /* SubTitles-Models.swift */; };
 		2BF536EB2753C30C00E9CC4A /* ThreadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF536EA2753C30C00E9CC4A /* ThreadType.swift */; };
+		F6B74978A78201166CA9688E /* Pods_AvPlayerStreaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4CAC3D9A8BE792888A1D72 /* Pods_AvPlayerStreaming.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C4CAC3D9A8BE792888A1D72 /* Pods_AvPlayerStreaming.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvPlayerStreaming.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8A738C27534869004A6BD9 /* AvPlayerStreaming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvPlayerStreaming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8A738F27534869004A6BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B8A739127534869004A6BD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,8 @@
 		2B8A741A2753A0C5004A6BD9 /* TbInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TbInfoCell.swift; sourceTree = "<group>"; };
 		2B8A74222753A327004A6BD9 /* SubTitles-Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubTitles-Models.swift"; sourceTree = "<group>"; };
 		2BF536EA2753C30C00E9CC4A /* ThreadType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadType.swift; sourceTree = "<group>"; };
+		390E50F5355553C25DCA5DF8 /* Pods-AvPlayerStreaming.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvPlayerStreaming.release.xcconfig"; path = "Target Support Files/Pods-AvPlayerStreaming/Pods-AvPlayerStreaming.release.xcconfig"; sourceTree = "<group>"; };
+		EFCF76DB27863E20C61548C6 /* Pods-AvPlayerStreaming.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvPlayerStreaming.debug.xcconfig"; path = "Target Support Files/Pods-AvPlayerStreaming/Pods-AvPlayerStreaming.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6B74978A78201166CA9688E /* Pods_AvPlayerStreaming.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +108,8 @@
 				2B8A73A52753486A004A6BD9 /* AvPlayerStreamingTests */,
 				2B8A73B02753486A004A6BD9 /* AvPlayerStreamingUITests */,
 				2B8A738D27534869004A6BD9 /* Products */,
+				B86A71E53B5345E06AC65AD5 /* Pods */,
+				F564D29B1CABAA95A8D12408 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +237,23 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		B86A71E53B5345E06AC65AD5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EFCF76DB27863E20C61548C6 /* Pods-AvPlayerStreaming.debug.xcconfig */,
+				390E50F5355553C25DCA5DF8 /* Pods-AvPlayerStreaming.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F564D29B1CABAA95A8D12408 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C4CAC3D9A8BE792888A1D72 /* Pods_AvPlayerStreaming.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,9 +261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B8A73B62753486A004A6BD9 /* Build configuration list for PBXNativeTarget "AvPlayerStreaming" */;
 			buildPhases = (
+				A3CC7F9A33C6440FD179C773 /* [CP] Check Pods Manifest.lock */,
 				2B8A738827534869004A6BD9 /* Sources */,
 				2B8A738927534869004A6BD9 /* Frameworks */,
 				2B8A738A27534869004A6BD9 /* Resources */,
+				8C79C69D56AFCC7E53C0BE62 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -354,6 +380,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8C79C69D56AFCC7E53C0BE62 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AvPlayerStreaming/Pods-AvPlayerStreaming-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AvPlayerStreaming/Pods-AvPlayerStreaming-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AvPlayerStreaming/Pods-AvPlayerStreaming-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3CC7F9A33C6440FD179C773 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AvPlayerStreaming-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2B8A738827534869004A6BD9 /* Sources */ = {
@@ -545,10 +613,12 @@
 		};
 		2B8A73B72753486A004A6BD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFCF76DB27863E20C61548C6 /* Pods-AvPlayerStreaming.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N6UAGD6F2D;
 				INFOPLIST_FILE = AvPlayerStreaming/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -563,10 +633,12 @@
 		};
 		2B8A73B82753486A004A6BD9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 390E50F5355553C25DCA5DF8 /* Pods-AvPlayerStreaming.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N6UAGD6F2D;
 				INFOPLIST_FILE = AvPlayerStreaming/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

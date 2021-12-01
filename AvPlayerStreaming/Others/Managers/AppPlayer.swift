@@ -7,6 +7,8 @@
 
 import AVFoundation
 import UIKit
+import BitmovinAnalyticsCollector
+
 
 fileprivate enum PlayerNotification : CustomStringConvertible {
     case bufferEmpty
@@ -38,19 +40,29 @@ class AppPlayer : NSObject {
     var didFinishedPlaying :(()->Void)?
     var listenToPlayerState : ((AppPlayerState)->Void)?
     var playerState : AppPlayerState = .idle
+    var analyticsCollector : AVPlayerCollector?
+
     /*Setup/prepare player */
     func setUpPlayerWithUrl(url: URL, into view : UIView){
         let asset = AVAsset(url: url)
         let playerItem = AVPlayerItem(asset: asset)
         player = AVPlayer(playerItem : playerItem)
+        let config:BitmovinAnalyticsConfig = BitmovinAnalyticsConfig(key:"YOUR-LICENSE-KEY")
+
+        analyticsCollector = AVPlayerCollector(config: config);
 
         let playerLayer = AVPlayerLayer(player: player)
+        
+
         playerLayer.frame = view.frame
         view.layer.addSublayer(playerLayer)
        NotificationCenter.default.addObserver(self, selector: #selector(finishedPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
         playerItem.addObserver(self, forKeyPath: PlayerNotification.bufferEmpty.description, options: .new, context: nil)
         playerItem.addObserver(self, forKeyPath: PlayerNotification.bufferKeepUp.description, options: .new, context: nil)
         playerItem.addObserver(self, forKeyPath: PlayerNotification.bufferFull.description, options: .new, context: nil)
+        
+        analyticsCollector!.attachPlayer(player: player!);
+
     
     }
     /*Time Observer to monintor continues playing time of player*/
@@ -71,6 +83,8 @@ class AppPlayer : NSObject {
         })
     }
     @objc func finishedPlaying() {
+        
+        analyticsCollector!.detachPlayer()
         setPlayerState(state: .finishedPlaying)
         didFinishedPlaying?()
        
